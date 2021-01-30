@@ -1,0 +1,31 @@
+{
+  "name": "@thzero/ncu_action",
+  "version": "1.0.0",
+  "description": "This Github action will run the command `ncu`([tjunnone/npm-check-updates](https://github.com/tjunnone/npm-check-updates)) and will return a value if any dependency needs is updated.",
+  "author": "thZero",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thzero/ncu_action.git"
+  },
+  "bugs": {
+    "url": "https://github.com/thzero/ncu_action/issues"
+  },
+  "homepage": "https://github.com/thzero/ncu_action#readme",
+  "engines": {
+    "node": ">=12.8.3"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "ncc build index.js --license LICENSE"
+  },
+  "keywords": [],
+  "dependencies": {
+    "@actions/core": "^1.2.6",
+    "@actions/github": "^4.0.0"
+  },
+  "devDependencies": {
+    "@vercel/ncc": "^0.27.0"
+  }
+}
