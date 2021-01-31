@@ -3,15 +3,14 @@ const ncu = require('npm-check-updates');
 
 try {
     let ncuOptions = core.getInput('ncu-options');
-    console.log(`ncu-options1`, ncuOptions);
-    ncuOptions = ncuOptions ? ncuOptions : {
+    const defaultOptions = {
         upgrade: true,
         jsonUpgraded: true,
         silent: false,
         packageManager: 'npm'
     };
-    console.log(`ncu-options2`, ncuOptions);
-    console.log(`ncu-options3`, JSON.stringify(ncuOptions));
+    ncuOptions = ncuOptions ? { ...defaultOptions, ...ncuOptions } : defaultOptions;
+    console.log(`ncu-options`, ncuOptions);
 
     ncu.run(ncuOptions)
         .then((upgraded) => {
