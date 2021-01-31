@@ -3,7 +3,7 @@ const ncu = require('npm-check-updates');
 
 try {
     let ncuOptions = core.getInput('ncu-options');
-    ncuOptions = ncuOptions | {
+    ncuOptions = ncuOptions ? ncuOptions : {
         upgrade: true,
         jsonUpgraded: true,
         silent: false,
