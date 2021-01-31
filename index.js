@@ -18,8 +18,10 @@ try {
                 console.log('Upgraded.');
                 core.setOutput('upgraded', upgraded);
             }
-            else
+            else {
                 console.log('No upgrades.');
+                core.setOutput('upgraded', false);
+            }
 
             core.setOutput('success', result);
         });
