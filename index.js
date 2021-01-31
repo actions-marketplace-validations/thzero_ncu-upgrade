@@ -9,7 +9,7 @@ try {
         silent: false,
         packageManager: 'npm'
     };
-    console.log(`Options ${ncuOptions}`);
+    console.log(`Options`, ncuOptions);
 
     ncu.run(ncuOptions)
         .then((upgraded) => {
