@@ -25,3 +25,7 @@ jobs:
       uses: thzero/ncu-upgrade@v1
 
 ```
+
+### NCC Issue
+
+There is an issue with NCC and the @npmcli/run-script package due to node-gyp.  As such, currently, the @npmcli/run-script must be pulled into the dist folder directly.
