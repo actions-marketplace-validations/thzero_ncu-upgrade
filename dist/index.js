@@ -130,13 +130,15 @@ const ncu = __nccwpck_require__(89934);
 
 try {
     let ncuOptions = core.getInput('ncu-options');
-    ncuOptions = ncuOptions | {
+    console.log(`ncu-options1`, ncuOptions);
+    ncuOptions = ncuOptions ? ncuOptions : {
         upgrade: true,
         jsonUpgraded: true,
         silent: false,
         packageManager: 'npm'
     };
-    console.log(`Options ${ncuOptions}`);
+    console.log(`ncu-options2`, ncuOptions);
+    console.log(`ncu-options3`, JSON.stringify(ncuOptions));
 
     ncu.run(ncuOptions)
         .then((upgraded) => {
@@ -145,8 +147,10 @@ try {
                 console.log('Upgraded.');
                 core.setOutput('upgraded', upgraded);
             }
-            else
+            else {
                 console.log('No upgrades.');
+                core.setOutput('upgraded', false);
+            }
 
             core.setOutput('success', result);
         });
