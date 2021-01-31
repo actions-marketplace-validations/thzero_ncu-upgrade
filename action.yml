@@ -1,13 +1,10 @@
 name: 'ncu-upgrade'
 description: 'Use NCU to perform upgrades.'
-inputs:
-  who-to-greet:  # id of input
-    description: 'Who to greet'
-    required: true
-    default: 'World'
 outputs:
-  time: # id of output
-    description: 'The time we greeted you'
+  success:
+    description: 'Did it succeed?'
+  upgraded:
+    description: 'Whether dependencies were upgraded'
 runs:
   using: 'node12'
   main: 'dist/index.js'
