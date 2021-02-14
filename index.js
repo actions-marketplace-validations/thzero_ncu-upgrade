@@ -25,8 +25,8 @@ try {
                 core.setOutput('upgraded', false);
                 core.setOutput('upgrades', '');
             }
-            console.log('upgraded', upgraded);
-            console.log('upgrades', upgrades);
+            console.log(`upgraded: ${upgraded}`);
+            console.log(`upgrades: ${upgrades}`);
 
             core.setOutput('success', result);
         });
