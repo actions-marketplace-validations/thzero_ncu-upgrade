@@ -5,6 +5,8 @@ outputs:
     description: 'Did it succeed?'
   upgraded:
     description: 'Whether dependencies were upgraded'
+  upgradeds:
+    description: 'Packages that were upgraded, if any'
 runs:
   using: 'node12'
   main: 'dist/index.js'

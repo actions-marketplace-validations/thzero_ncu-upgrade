@@ -4,9 +4,14 @@
 ![David](https://img.shields.io/david/thzero/ncu-upgrade)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-### Usage
+## Usage
 
 This Github action will run the command `ncu`([tjunnone/npm-check-updates](https://github.com/tjunnone/npm-check-updates)) and will return a value if any dependency needs is updated.
+
+### Outputs
+
+* ugpraded (true/false) - Whether dependencies were upgraded
+* upgrades (string) - Packages that were upgraded, if any
 
 ### Example
 
