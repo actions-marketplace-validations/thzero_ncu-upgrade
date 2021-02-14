@@ -10,7 +10,7 @@ This Github action will run the command `ncu`([tjunnone/npm-check-updates](https
 
 ### Outputs
 
-* ugpraded (true/false) - Whether dependencies were upgraded
+* ugpraded (1/0 as string :()) - Whether dependencies were upgraded
 * upgrades (string) - Packages that were upgraded, if any
 
 ### Example
