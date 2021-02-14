@@ -26,7 +26,7 @@ try {
                     core.setOutput('upgraded', false);
                     core.setOutput('upgrades', '');
                 }
-                core.info(`upgraded: ${upgraded}`);
+                core.info(`upgraded: ${result}`);
                 core.info(`upgrades: ${upgrades}`);
 
                 core.setOutput('success', result);
