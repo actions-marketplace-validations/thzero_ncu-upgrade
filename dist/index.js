@@ -140,22 +140,32 @@ try {
     console.log(`ncu-options`, ncuOptions);
 
     ncu.run(ncuOptions)
-        .then((upgraded) => {
-            const result = upgraded ? (Object.keys(upgraded).length > 0) :  false;
-            if (result) {
-                console.log('Upgraded.');
-                core.setOutput('upgraded', upgraded);
-            }
-            else {
-                console.log('No upgrades.');
-                core.setOutput('upgraded', false);
-            }
+        .then((upgrades) => {
+            try {
+                const result = upgrades ? (Object.keys(upgrades).length > 0) :  false;
+                if (result) {
+                    core.setOutput('upgraded', result);
+                    core.setOutput('upgrades', upgrades);
+                    core.info('Upgraded.');
+                }
+                else {
+                    core.info('No upgrades.');
+                    core.setOutput('upgraded', false);
+                    core.setOutput('upgrades', '');
+                }
+                core.info(`upgraded: ${upgraded}`);
+                core.info(`upgrades: ${upgrades}`);
 
-            core.setOutput('success', result);
+                core.setOutput('success', result);
+            }
+            catch (err) {
+                core.error(err);
+                core.setFailed(`Action failed with error ${err}`);
+            }
         });
 }
-catch (error) {
-    core.setFailed(error.message);
+catch (err) {
+    core.setFailed(`Action failed with error ${err}`);
 }
 
 
