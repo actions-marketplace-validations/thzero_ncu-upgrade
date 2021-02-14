@@ -17,19 +17,17 @@ try {
             try {
                 const result = upgrades ? (Object.keys(upgrades).length > 0) :  false;
                 if (result) {
-                    core.setOutput('upgraded', result);
+                    core.setOutput('upgraded', 1);
                     core.setOutput('upgrades', upgrades);
                     core.info('Upgraded.');
                 }
                 else {
                     core.info('No upgrades.');
-                    core.setOutput('upgraded', false);
+                    core.setOutput('upgraded', 0);
                     core.setOutput('upgrades', '');
                 }
                 core.info(`upgraded: ${result}`);
                 core.info(`upgrades: ${upgrades}`);
-
-                core.setOutput('success', result);
             }
             catch (err) {
                 core.error(err);
