@@ -153,8 +153,7 @@ try {
                     core.setOutput('upgraded', 0);
                     core.setOutput('upgrades', '');
                 }
-                core.info(`upgraded: ${result}`);
-                core.info(`upgrades: ${upgrades}`);
+                core.info(`upgraded: ${result ? 1 : 0}`);
             }
             catch (err) {
                 core.error(err);
