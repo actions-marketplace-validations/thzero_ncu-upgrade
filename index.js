@@ -14,21 +14,30 @@ try {
 
     ncu.run(ncuOptions)
         .then((upgrades) => {
-            const result = upgrades ? (Object.keys(upgrades).length > 0) :  false;
-            if (result) {
-                console.log('Upgraded.');
-                core.setOutput('upgraded', result);
-                core.setOutput('upgrades', upgrades);
-            }
-            else {
-                console.log('No upgrades.');
-                core.setOutput('upgraded', false);
-                core.setOutput('upgrades', '');
-            }
-            console.log(`upgraded: ${upgraded}`);
-            console.log(`upgrades: ${upgrades}`);
+            try {
+                const result = upgrades ? (Object.keys(upgrades).length > 0) :  false;
+                if (result) {
+                    console.log('Upgraded1.');
+                    core.setOutput('upgraded', result);
+                    console.log('Upgraded2.');
+                    core.setOutput('upgrades', upgrades);
+                    console.log('Upgraded3.');
+                }
+                else {
+                    console.log('No upgrades.');
+                    core.setOutput('upgraded', false);
+                    core.setOutput('upgrades', '');
+                }
+                console.log('test1.');
+                console.log(`upgraded: ${upgraded}`);
+                console.log(`upgrades: ${upgrades}`);
+                console.log('test2.');
 
-            core.setOutput('success', result);
+                core.setOutput('success', result);
+            }
+            catch (err) {
+                console.log(err);
+            }
         });
 }
 catch (error) {
