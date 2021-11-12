@@ -6,11 +6,11 @@
 
 ## Usage
 
-This Github action will run the command `ncu`([tjunnone/npm-check-updates](https://github.com/tjunnone/npm-check-updates)) and will return a value if any dependency needs is updated.
+This GitHub action will run the command `ncu` ([tjunnone/npm-check-updates](https://github.com/tjunnone/npm-check-updates)) and will return a value if any dependency need to be updated.
 
 ### Outputs
 
-* ugpraded (1/0 as string :()) - Whether dependencies were upgraded
+* upgraded (`'1'` or `'0'` as string) - Whether dependencies were upgraded
 * upgrades (string) - Packages that were upgraded, if any
 
 ### Example
@@ -33,4 +33,4 @@ jobs:
 
 ### NCC Issue
 
-There is an issue with NCC and the @npmcli/run-script package due to node-gyp.  As such, currently, the @npmcli/run-script must be pulled into the dist folder directly.
+There is an issue with NCC and the `@npmcli/run-script` package due to `node-gyp`. As such, currently, the `@npmcli/run-script` must be pulled into the [dist](/dist/) folder directly.
